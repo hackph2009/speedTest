@@ -60,6 +60,11 @@ startButton.onclick = function () {
   input.focus();
   genWords();
 };
+keyboardEvent = document.addEventListener("keydown", function (event) {
+  if (event.key === "Enter") {
+    startButton.click();
+  }
+});
 
 function genWords() {
   let randomWord = words[Math.floor(Math.random() * words.length)];
